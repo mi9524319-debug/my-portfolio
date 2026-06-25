@@ -27,10 +27,12 @@ const Scene = () => {
       const aspect = container.width / container.height;
       const scene = sceneRef.current;
 
-      const isMobile = window.innerWidth <= 768;
+      const isMobile = window.innerWidth <= 1024;
       const renderer = new THREE.WebGLRenderer({
         alpha: true,
         antialias: !isMobile,
+        powerPreference: "high-performance",
+        precision: "mediump",
       });
       renderer.setSize(container.width, container.height);
       renderer.setPixelRatio(
@@ -62,6 +64,16 @@ const Scene = () => {
           hoverDivRef.current && animations.hover(gltf, hoverDivRef.current);
           mixer = animations.mixer;
           let character = gltf.scene;
+          
+          // Apply responsive model scaling and positioning
+          if (isMobile) {
+            character.scale.set(0.78, 0.78, 0.78);
+            character.position.set(0.2, 0.2, 0);
+          } else {
+            character.scale.set(1, 1, 1);
+            character.position.set(0, 0, 0);
+          }
+          
           setChar(character);
           scene.add(character);
           headBone = character.getObjectByName("spine006") || null;

@@ -1,6 +1,7 @@
 import { SplitText } from "gsap/SplitText";
 import gsap from "gsap";
 import { smoother } from "../Navbar";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export function initialFX() {
   document.body.style.overflowY = "auto";
@@ -80,6 +81,10 @@ export function initialFX() {
 
   LoopText(landingText2, landingText3);
   LoopText(landingText4, landingText5);
+
+  setTimeout(() => {
+    ScrollTrigger.refresh();
+  }, 100);
 }
 
 function LoopText(Text1: SplitText, Text2: SplitText) {
