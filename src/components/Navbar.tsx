@@ -14,26 +14,24 @@ const Navbar = () => {
   const closeMenu = () => setIsMenuOpen(false);
 
   useEffect(() => {
-    if (window.innerWidth > 1024) {
-      smoother = ScrollSmoother.create({
-        wrapper: "#smooth-wrapper",
-        content: "#smooth-content",
-        smooth: 1.7,
-        speed: 1.7,
-        effects: true,
-        autoResize: true,
-        ignoreMobileResize: true,
-      });
+    smoother = ScrollSmoother.create({
+      wrapper: "#smooth-wrapper",
+      content: "#smooth-content",
+      smooth: 1.7,
+      speed: 1.7,
+      effects: true,
+      autoResize: true,
+      ignoreMobileResize: true,
+    });
 
-      smoother.scrollTop(0);
-      smoother.paused(true);
-    }
+    smoother.scrollTop(0);
+    smoother.paused(true);
 
     let links = document.querySelectorAll(".header ul a");
     links.forEach((elem) => {
       let element = elem as HTMLAnchorElement;
       element.addEventListener("click", (e) => {
-        if (window.innerWidth > 1024 && smoother) {
+        if (smoother) {
           e.preventDefault();
           let elem = e.currentTarget as HTMLAnchorElement;
           let section = elem.getAttribute("data-href");
@@ -43,7 +41,7 @@ const Navbar = () => {
     });
 
     const resizeHandler = () => {
-      if (window.innerWidth > 1024) {
+      if (smoother) {
         ScrollSmoother.refresh(true);
       }
     };

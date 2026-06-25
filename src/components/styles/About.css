@@ -5,7 +5,7 @@
   place-items: center;
   position: relative;
   opacity: 1;
-  height: auto;
+  height: var(--vh);
   width: var(--cWidth);
   margin: auto;
 }

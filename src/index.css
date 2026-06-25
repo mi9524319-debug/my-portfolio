@@ -129,10 +129,6 @@ body {
 
 /* Responsive Overrides */
 @media screen and (max-width: 1024px) {
-  body {
-    overflow: auto !important;
-    overflow-x: hidden !important;
-  }
   .cursor-main {
     display: none !important;
   }

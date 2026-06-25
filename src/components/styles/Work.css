@@ -28,14 +28,14 @@
   position: relative;
 }
 .work-box {
-  padding: 80px;
+  padding: clamp(30px, 6vw, 80px);
   display: flex;
   flex-direction: column;
-  width: 600px;
+  width: clamp(300px, 90vw, 600px);
   box-sizing: border-box;
   border-right: 1px solid #363636;
   flex-shrink: 0;
-  gap: 50px;
+  gap: clamp(30px, 5vw, 50px);
   justify-content: start;
 }
 .work-flex .work-box:nth-child(even) {
@@ -209,60 +209,4 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
-  .work-section {
-    height: auto !important;
-    padding: 60px 0px;
-    margin-bottom: 50px;
-  }
-  .work-container {
-    width: var(--cWidth) !important;
-    margin: auto !important;
-    padding: 0px !important;
-    align-content: normal;
-  }
-  .work-section h2 {
-    font-size: clamp(38px, 8vw, 55px);
-    margin-top: 20px;
-    margin-bottom: 40px;
-    text-align: left;
-  }
-  .work-flex {
-    flex-direction: column !important;
-    height: auto !important;
-    margin-left: 0px !important;
-    padding-right: 0px !important;
-    gap: 50px;
-  }
-  .work-flex::before,
-  .work-flex::after {
-    display: none !important;
-  }
-  .work-box {
-    width: 100% !important;
-    padding: 0px 0px 30px 0px !important;
-    border-right: none !important;
-    border-bottom: 1px solid #363636 !important;
-    gap: 30px !important;
-  }
-  .work-flex .work-box:nth-child(even) {
-    flex-direction: column !important;
-  }
-  .work-title h3 {
-    font-size: clamp(30px, 6vw, 42px);
-    line-height: normal;
-  }
-  .work-info h4 {
-    font-size: 16px;
-  }
-  .work-info p {
-    font-size: 13px;
-    line-height: 1.5;
-  }
-  .work-image img {
-    width: 100%;
-    max-height: 240px;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-}
+
