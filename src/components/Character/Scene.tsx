@@ -66,9 +66,13 @@ const Scene = () => {
           let character = gltf.scene;
           
           // Apply responsive model scaling and positioning
-          if (isMobile) {
+          const width = window.innerWidth;
+          if (width <= 480) {
+            character.scale.set(0.7, 0.7, 0.7);
+            character.position.set(0, -1.0, 0);
+          } else if (width <= 1024) {
             character.scale.set(0.78, 0.78, 0.78);
-            character.position.set(0.2, 0.2, 0);
+            character.position.set(0.9, 0.2, 0);
           } else {
             character.scale.set(1, 1, 1);
             character.position.set(0, 0, 0);

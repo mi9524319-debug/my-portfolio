@@ -17,10 +17,13 @@ export default function handleResize(
   camera.updateProjectionMatrix();
 
   if (_character) {
-    const isMobile = window.innerWidth <= 1024;
-    if (isMobile) {
+    const width = window.innerWidth;
+    if (width <= 480) {
+      _character.scale.set(0.7, 0.7, 0.7);
+      _character.position.set(0, -1.0, 0);
+    } else if (width <= 1024) {
       _character.scale.set(0.78, 0.78, 0.78);
-      _character.position.set(0.2, 0.2, 0);
+      _character.position.set(0.9, 0.2, 0);
     } else {
       _character.scale.set(1, 1, 1);
       _character.position.set(0, 0, 0);
