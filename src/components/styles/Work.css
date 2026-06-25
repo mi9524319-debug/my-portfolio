@@ -11,6 +11,7 @@
   height: 100vh;
   box-sizing: border-box;
   will-change: transform;
+  z-index: 12;
 }
 .work-container {
   margin: auto;
@@ -206,6 +207,8 @@
   }
   .work-flex {
     height: auto;
+    margin-left: -20px;
+    padding-right: 40px;
   }
 }
 

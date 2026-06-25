@@ -135,7 +135,7 @@
 }
 .landing-intro {
   position: absolute;
-  z-index: 9;
+  z-index: 12;
   top: 12%;
   left: 0;
 }
@@ -166,7 +166,7 @@
   transform: translateX(50%);
   bottom: 40px;
   top: inherit;
-  z-index: 9;
+  z-index: 12;
 }
 .landing-info h3 {
   font-size: clamp(14px, 4.5vw, 22px);

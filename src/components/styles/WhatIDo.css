@@ -9,7 +9,7 @@
   width: var(--cWidth);
   max-width: 1920px;
   margin: auto;
-  z-index: 9;
+  z-index: 12;
 }
 .what-box {
   width: 50%;
@@ -291,10 +291,13 @@
   .what-box-in {
     height: 500px;
     margin-left: -50px;
+    width: 100% !important;
+    max-width: 500px;
   }
   .what-content {
     padding: 50px;
-    width: 500px;
+    width: 100% !important;
+    max-width: 500px;
   }
   .what-content p {
     font-size: 14px;
