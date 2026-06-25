@@ -281,7 +281,6 @@ h2.landing-info-h2 {
     font-size: 75px;
   }
 }
-
 .hero-resume-btn {
   display: none;
 }
@@ -294,38 +293,55 @@ h2.landing-info-h2 {
     transform: translate3d(-50%, 0, 0) !important;
   }
   .landing-container {
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: flex-start !important;
-    align-items: flex-start !important;
-    padding-top: 80px !important;
-    padding-left: 5% !important;
-    box-sizing: border-box !important;
-    height: 100% !important;
-  }
-  .landing-intro,
-  .landing-info {
     position: relative !important;
-    top: auto !important;
-    left: auto !important;
+    display: block !important;
+    height: 100% !important;
+    width: 100% !important;
+  }
+  .landing-intro {
+    position: absolute !important;
+    top: 50% !important;
+    left: 5% !important;
+    transform: translateY(-50%) !important;
+    width: 32% !important;
     right: auto !important;
-    bottom: auto !important;
-    transform: none !important;
-    width: 55% !important;
-    max-width: 500px !important;
     margin: 0 !important;
+    z-index: 12;
   }
   .landing-info {
-    margin-top: 30px !important;
+    position: absolute !important;
+    top: 50% !important;
+    right: 5% !important;
+    left: auto !important;
+    transform: translateY(-50%) !important;
+    width: 34% !important;
+    bottom: auto !important;
+    margin: 0 !important;
+    z-index: 12;
+  }
+  .landing-intro h1 {
+    font-size: clamp(20px, 5.5vw, 32px) !important;
+    line-height: clamp(22px, 6vw, 34px) !important;
+  }
+  .landing-info h2 {
+    font-size: clamp(18px, 5vw, 26px) !important;
+    line-height: clamp(20px, 5.5vw, 30px) !important;
+    margin-left: 0px !important;
+    margin-top: 5px !important;
+  }
+  h2.landing-info-h2 {
+    font-size: clamp(20px, 5.5vw, 30px) !important;
+    color: #c481ff;
+    text-shadow: 0 0 10px rgba(196, 129, 255, 0.5), 0 0 20px rgba(196, 129, 255, 0.2);
   }
   .hero-resume-btn {
     display: inline-flex !important;
     opacity: 0;
     align-items: center;
     gap: 8px;
-    margin-top: 30px;
-    padding: 12px 28px;
-    font-size: 14px;
+    margin-top: 25px;
+    padding: 10px 24px;
+    font-size: 13px;
     font-weight: 600;
     letter-spacing: 2px;
     color: var(--accentColor);
@@ -337,7 +353,7 @@ h2.landing-info-h2 {
     box-shadow: 0 4px 15px rgba(194, 164, 255, 0.1);
   }
   .hero-resume-btn span {
-    font-size: 16px;
+    font-size: 15px;
     display: flex;
     align-items: center;
   }
@@ -357,48 +373,61 @@ h2.landing-info-h2 {
     transform: translate3d(-50%, 0, 0) !important;
   }
   .landing-container {
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: flex-start !important;
-    align-items: flex-start !important;
-    padding-top: 70px !important;
-    padding-left: 5% !important;
-    box-sizing: border-box !important;
-    height: 100% !important;
-  }
-  .landing-intro,
-  .landing-info {
     position: relative !important;
-    top: auto !important;
-    left: auto !important;
+    display: block !important;
+    height: 100% !important;
+    width: 100% !important;
+  }
+  .landing-intro {
+    position: absolute !important;
+    top: 50% !important;
+    left: 3% !important;
+    transform: translateY(-50%) !important;
+    width: 32% !important;
     right: auto !important;
-    bottom: auto !important;
-    transform: none !important;
-    width: 90% !important;
-    max-width: 500px !important;
     margin: 0 !important;
+    z-index: 12;
   }
   .landing-info {
-    margin-top: 25px !important;
+    position: absolute !important;
+    top: 50% !important;
+    right: 3% !important;
+    left: auto !important;
+    transform: translateY(-50%) !important;
+    width: 34% !important;
+    bottom: auto !important;
+    margin: 0 !important;
+    z-index: 12;
+  }
+  .landing-intro h1 {
+    font-size: clamp(15px, 5vw, 22px) !important;
+    line-height: clamp(17px, 5.5vw, 24px) !important;
+  }
+  .landing-intro h2 {
+    font-size: clamp(9px, 3.2vw, 13px) !important;
+  }
+  .landing-info h3 {
+    font-size: clamp(9px, 3.2vw, 13px) !important;
   }
   .landing-info h2 {
-    font-size: clamp(22px, 6vw, 28px) !important;
-    line-height: clamp(26px, 7vw, 32px) !important;
+    font-size: clamp(14px, 4.5vw, 19px) !important;
+    line-height: clamp(16px, 5vw, 21px) !important;
     margin-left: 0px !important;
-    margin-top: 5px !important;
+    margin-top: 4px !important;
   }
   h2.landing-info-h2 {
-    font-size: clamp(24px, 7vw, 32px) !important;
-    margin-top: 0px !important;
+    font-size: clamp(16px, 5vw, 21px) !important;
+    color: #c481ff;
+    text-shadow: 0 0 8px rgba(196, 129, 255, 0.6), 0 0 15px rgba(196, 129, 255, 0.3);
   }
   .hero-resume-btn {
     display: inline-flex !important;
     opacity: 0;
     align-items: center;
-    gap: 8px;
-    margin-top: 25px;
-    padding: 10px 24px;
-    font-size: 13px;
+    gap: 6px;
+    margin-top: 15px;
+    padding: 8px 18px;
+    font-size: 11px;
     font-weight: 600;
     letter-spacing: 2px;
     color: var(--accentColor);
@@ -410,7 +439,7 @@ h2.landing-info-h2 {
     box-shadow: 0 4px 12px rgba(194, 164, 255, 0.1);
   }
   .hero-resume-btn span {
-    font-size: 15px;
+    font-size: 13px;
     display: flex;
     align-items: center;
   }

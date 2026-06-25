@@ -19,11 +19,11 @@ export default function handleResize(
   if (_character) {
     const width = window.innerWidth;
     if (width <= 480) {
-      _character.scale.set(0.72, 0.72, 0.72);
-      _character.position.set(0, -0.75, 0);
+      _character.scale.set(0.62, 0.62, 0.62);
+      _character.position.set(0, 0.1, 0);
     } else if (width <= 1024) {
-      _character.scale.set(0.78, 0.78, 0.78);
-      _character.position.set(0.9, 0.2, 0);
+      _character.scale.set(0.72, 0.72, 0.72);
+      _character.position.set(0, 0.1, 0);
     } else {
       _character.scale.set(1, 1, 1);
       _character.position.set(0, 0, 0);
