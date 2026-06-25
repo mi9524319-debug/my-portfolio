@@ -1,4 +1,5 @@
 import { PropsWithChildren } from "react";
+import { TbNotes } from "react-icons/tb";
 import "./styles/Landing.css";
 
 const Landing = ({ children }: PropsWithChildren) => {
@@ -24,6 +25,12 @@ const Landing = ({ children }: PropsWithChildren) => {
               <div className="landing-h2-info">Developer</div>
               <div className="landing-h2-info-1">Designer</div>
             </h2>
+            <a className="hero-resume-btn" href="#">
+              RESUME
+              <span>
+                <TbNotes />
+              </span>
+            </a>
           </div>
         </div>
         {children}

@@ -282,6 +282,10 @@ h2.landing-info-h2 {
   }
 }
 
+.hero-resume-btn {
+  display: none;
+}
+
 @media screen and (min-width: 481px) and (max-width: 1024px) {
   .landing-section {
     height: 120vh !important;
@@ -289,20 +293,59 @@ h2.landing-info-h2 {
   .character-model {
     transform: translate3d(0, 0, 0) !important;
   }
-  .landing-intro {
-    top: 15% !important;
-    left: 5% !important;
-    width: 55% !important;
+  .landing-container {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    padding-top: 80px !important;
+    padding-left: 5% !important;
+    box-sizing: border-box !important;
+    height: 100% !important;
+  }
+  .landing-intro,
+  .landing-info {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
     right: auto !important;
+    bottom: auto !important;
     transform: none !important;
+    width: 55% !important;
+    max-width: 500px !important;
+    margin: 0 !important;
   }
   .landing-info {
-    top: 50% !important;
-    left: 5% !important;
-    width: 55% !important;
-    bottom: auto !important;
-    right: auto !important;
-    transform: none !important;
+    margin-top: 30px !important;
+  }
+  .hero-resume-btn {
+    display: inline-flex !important;
+    opacity: 0;
+    align-items: center;
+    gap: 8px;
+    margin-top: 30px;
+    padding: 12px 28px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--accentColor);
+    border: 1px solid var(--accentColor);
+    border-radius: 30px;
+    background-color: rgba(194, 164, 255, 0.05);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(194, 164, 255, 0.1);
+  }
+  .hero-resume-btn span {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+  }
+  .hero-resume-btn:hover {
+    color: #fff;
+    border-color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.15);
   }
 }
 
@@ -313,19 +356,66 @@ h2.landing-info-h2 {
   .character-model {
     transform: translate3d(0, 0, 0) !important;
   }
-  .landing-intro {
-    top: 12% !important;
-    left: 5% !important;
-    width: 90% !important;
+  .landing-container {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    padding-top: 70px !important;
+    padding-left: 5% !important;
+    box-sizing: border-box !important;
+    height: 100% !important;
+  }
+  .landing-intro,
+  .landing-info {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
     right: auto !important;
+    bottom: auto !important;
     transform: none !important;
+    width: 90% !important;
+    max-width: 500px !important;
+    margin: 0 !important;
   }
   .landing-info {
-    top: 38% !important;
-    left: 5% !important;
-    width: 90% !important;
-    bottom: auto !important;
-    right: auto !important;
-    transform: none !important;
+    margin-top: 25px !important;
+  }
+  .landing-info h2 {
+    font-size: clamp(22px, 6vw, 28px) !important;
+    line-height: clamp(26px, 7vw, 32px) !important;
+    margin-left: 0px !important;
+  }
+  h2.landing-info-h2 {
+    font-size: clamp(24px, 7vw, 32px) !important;
+  }
+  .hero-resume-btn {
+    display: inline-flex !important;
+    opacity: 0;
+    align-items: center;
+    gap: 8px;
+    margin-top: 25px;
+    padding: 10px 24px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--accentColor);
+    border: 1px solid var(--accentColor);
+    border-radius: 30px;
+    background-color: rgba(194, 164, 255, 0.05);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(194, 164, 255, 0.1);
+  }
+  .hero-resume-btn span {
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+  }
+  .hero-resume-btn:hover {
+    color: #fff;
+    border-color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
   }
 }
