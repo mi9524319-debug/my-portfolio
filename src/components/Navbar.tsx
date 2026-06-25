@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import HoverLinks from "./HoverLinks";
 import { gsap } from "gsap";
@@ -9,25 +9,31 @@ gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
 export let smoother: ScrollSmoother;
 
 const Navbar = () => {
-  useEffect(() => {
-    smoother = ScrollSmoother.create({
-      wrapper: "#smooth-wrapper",
-      content: "#smooth-content",
-      smooth: 1.7,
-      speed: 1.7,
-      effects: true,
-      autoResize: true,
-      ignoreMobileResize: true,
-    });
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => setIsMenuOpen(false);
 
-    smoother.scrollTop(0);
-    smoother.paused(true);
+  useEffect(() => {
+    if (window.innerWidth > 1024) {
+      smoother = ScrollSmoother.create({
+        wrapper: "#smooth-wrapper",
+        content: "#smooth-content",
+        smooth: 1.7,
+        speed: 1.7,
+        effects: true,
+        autoResize: true,
+        ignoreMobileResize: true,
+      });
+
+      smoother.scrollTop(0);
+      smoother.paused(true);
+    }
 
     let links = document.querySelectorAll(".header ul a");
     links.forEach((elem) => {
       let element = elem as HTMLAnchorElement;
       element.addEventListener("click", (e) => {
-        if (window.innerWidth > 1024) {
+        if (window.innerWidth > 1024 && smoother) {
           e.preventDefault();
           let elem = e.currentTarget as HTMLAnchorElement;
           let section = elem.getAttribute("data-href");
@@ -35,10 +41,34 @@ const Navbar = () => {
         }
       });
     });
-    window.addEventListener("resize", () => {
-      ScrollSmoother.refresh(true);
-    });
+
+    const resizeHandler = () => {
+      if (window.innerWidth > 1024) {
+        ScrollSmoother.refresh(true);
+      }
+    };
+    window.addEventListener("resize", resizeHandler);
+    return () => {
+      window.removeEventListener("resize", resizeHandler);
+    };
   }, []);
+
+  const handleMobileLinkClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    e.preventDefault();
+    setIsMenuOpen(false);
+    const target = document.querySelector(href);
+    if (target) {
+      if (smoother) {
+        smoother.scrollTo(target, true, "top top");
+      } else {
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <>
       <div className="header">
@@ -52,6 +82,15 @@ const Navbar = () => {
         >
           +91 70062 37200
         </a>
+        <button
+          className={`hamburger-btn ${isMenuOpen ? "open" : ""}`}
+          onClick={toggleMenu}
+          aria-label="Toggle Menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
         <ul>
           <li>
             <a data-href="#about" href="#about">
@@ -66,6 +105,44 @@ const Navbar = () => {
           <li>
             <a data-href="#contact" href="#contact">
               <HoverLinks text="CONTACT" />
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div className={`mobile-nav-overlay ${isMenuOpen ? "open" : ""}`}>
+        <ul className="mobile-nav-links">
+          <li>
+            <a
+              href="#about"
+              onClick={(e) => handleMobileLinkClick(e, "#about")}
+            >
+              ABOUT
+            </a>
+          </li>
+          <li>
+            <a
+              href="#work"
+              onClick={(e) => handleMobileLinkClick(e, "#work")}
+            >
+              WORK
+            </a>
+          </li>
+          <li>
+            <a
+              href="#contact"
+              onClick={(e) => handleMobileLinkClick(e, "#contact")}
+            >
+              CONTACT
+            </a>
+          </li>
+          <li>
+            <a
+              href="tel:+917006237200"
+              className="mobile-nav-phone"
+              onClick={closeMenu}
+            >
+              +91 70062 37200
             </a>
           </li>
         </ul>
