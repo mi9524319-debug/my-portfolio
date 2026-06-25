@@ -75,7 +75,7 @@
 
 @media only screen and (min-width: 481px) and (max-width: 1024px) {
   .about-section {
-    height: 120vh !important;
+    height: 100vh !important;
     justify-content: flex-start !important;
     align-items: center !important;
   }
@@ -89,7 +89,7 @@
 
 @media only screen and (max-width: 480px) {
   .about-section {
-    height: 120vh !important;
+    height: 100vh !important;
     justify-content: flex-start !important;
     align-items: flex-start !important;
   }

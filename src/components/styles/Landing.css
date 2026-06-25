@@ -288,10 +288,10 @@ h2.landing-info-h2 {
 
 @media screen and (min-width: 481px) and (max-width: 1024px) {
   .landing-section {
-    height: 120vh !important;
+    height: 100vh !important;
   }
   .character-model {
-    transform: translate3d(0, 0, 0) !important;
+    transform: translate3d(-50%, 0, 0) !important;
   }
   .landing-container {
     display: flex !important;
@@ -351,10 +351,10 @@ h2.landing-info-h2 {
 
 @media screen and (max-width: 480px) {
   .landing-section {
-    height: 120vh !important;
+    height: 100vh !important;
   }
   .character-model {
-    transform: translate3d(0, 0, 0) !important;
+    transform: translate3d(-50%, 0, 0) !important;
   }
   .landing-container {
     display: flex !important;
@@ -385,9 +385,11 @@ h2.landing-info-h2 {
     font-size: clamp(22px, 6vw, 28px) !important;
     line-height: clamp(26px, 7vw, 32px) !important;
     margin-left: 0px !important;
+    margin-top: 5px !important;
   }
   h2.landing-info-h2 {
     font-size: clamp(24px, 7vw, 32px) !important;
+    margin-top: 0px !important;
   }
   .hero-resume-btn {
     display: inline-flex !important;
